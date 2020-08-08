@@ -8,28 +8,32 @@
                         <div class="row">
                             <div class="input-field col s12">
                                 <input type="text" name="marca" #marca="ngModel" [(ngModel)]="autoService.selectedAuto.marca"
-                                placeholder="Ingrese la marca">
+                                placeholder="Ingrese la marca ej: Ford">
                              </div>
                             <div class="input-field col s12">
                                 <input type="text" name="modelo" #modelo="ngModel" [(ngModel)]="autoService.selectedAuto.modelo"
-                                placeholder="Ingrese el modelo">
+                                placeholder="Ingrese el modelo ej: 2020">
                             </div>
                             <div class="input-field col s12">
                                 <input type="text" name="km" #km="ngModel" [(ngModel)]="autoService.selectedAuto.km"
-                                placeholder="Ingrese los km">
+                                placeholder="Ingrese los km ej: 10.000">
                             </div>
                             <div class="input-field col s12">
                                 <input type="text" name="precio" #precio="ngModel" [(ngModel)]="autoService.selectedAuto.precio"
-                                placeholder="Ingrese el precio">
+                                placeholder="Ingrese el precio ej: 10.000$">
+                            </div>
+                            <div class="input-field col s12">
+                                <input type="text" name="duenio" #duenio="ngModel" [(ngModel)]="autoService.selectedAuto.duenio"
+                                placeholder="Ingrese el duenio ej: Federico Martinez">
                             </div>
                             <div class="input-field col s12">
                                 <input type="text" name="contacto" #contacto="ngModel" [(ngModel)]="autoService.selectedAuto.contacto"
-                                placeholder="Ingrese su celular como contacto">
+                                placeholder="Ingrese su celular como contacto ej: 2494223344">
                             </div>
                             <div class="card-action">
                                 <div class="input-field col s12">
                                     <button class="btn right" (click)="resetForm(autoForm)">Limpiar</button>
-                                    <button class="btn right" style="margin-left: 2px;">Guardar</button>
+                                    <button class="btn right"  style="margin-left: 2px;">Guardar</button>
                                 </div>
                             </div>
                         </div>
@@ -37,6 +41,7 @@
                 </div>
             </div>
         </div>
+        <h4>Planilla de Autos en Venta:</h4>
         <div class="col s7">
             <table>
                 <thead>
@@ -44,6 +49,7 @@
                     <th>Modelo</th>
                     <th>Km</th>
                     <th>Precio</th>
+                    <th>Dueño</th>
                     <th>Contacto</th>
                     <th>Operaciones</th>
                 </thead>
@@ -53,6 +59,7 @@
                         <td>{{ auto.modelo }}</td>
                         <td>{{ auto.km }}</td>
                         <td>{{ auto.precio }}</td>
+                        <td>{{ auto.duenio }}</td>
                         <td>{{ auto.contacto }}</td>
                         <td>
                             <a (click)="editAuto(auto)">

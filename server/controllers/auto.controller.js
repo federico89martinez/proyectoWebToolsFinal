@@ -16,6 +16,7 @@ autoCtrl.createAuto = async(req, res) => {
         modelo: req.body.modelo,
         km: req.body.km,
         precio: req.body.precio,
+        duenio: req.body.duenio,
         contacto: req.body.contacto
     }
     );
@@ -39,6 +40,7 @@ autoCtrl.editAuto = async(req, res) =>{
         modelo: req.body.modelo,
         km: req.body.km,
         precio: req.body.precio,
+        duenio: req.body.duenio,
         contacto: req.body.contacto
     };
     await Auto.findByIdAndUpdate(id, {$set: auto }, {new: true});

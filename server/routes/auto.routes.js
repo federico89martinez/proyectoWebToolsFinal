@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router();
 
-//const employee = require('../controllers/employee.controller');
 const auto = require('../controllers/auto.controller');
 
 router.get('/', auto.getAutos);   //obtener datos
